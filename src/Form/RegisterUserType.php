@@ -61,13 +61,13 @@ class RegisterUserType extends AbstractType
             ],
             'first_options'  => [
                 'label' => 'Votre mot de passe', 
-                'hash_property_path' => 'password', // hacher
+                'hash_property_path' => 'password', // Hacher. password ici correspond à la colonne password dans l'entity 
                 'attr' => [
                     'placeholder' => "123456"
                 ],
             ],
             'second_options' => [
-                'label' => 'Confirmer Votre mot de passe',
+                'label' => 'Confirmer votre mot de passe',
                 'attr' => [
                     'placeholder' => "123456"
                 ]
