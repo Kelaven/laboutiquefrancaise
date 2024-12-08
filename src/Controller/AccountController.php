@@ -36,6 +36,11 @@ class AccountController extends AbstractController
 // dd($form->getData());
         $entityManager->flush(); // on ne fait pas de persist() car il ne s'agit pas d'une création. 
 
+        $this->addFlash(
+            'success',
+            'Les modifications sont bien enregistrées.'
+        );
+
         }
 
         return $this->render('account/password.html.twig', [

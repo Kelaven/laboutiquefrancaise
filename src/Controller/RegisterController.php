@@ -27,6 +27,20 @@ class RegisterController extends AbstractController
             $entityManager->persist($user); // figer les données. On lui indique qu'on veut enregistrer les données dans la table user. 
             $entityManager->flush(); // enregistrer les données
 
+            $this->addFlash(
+                'success',
+                'Votre compte est correctement créé, veuillez vous connecter.'
+            );
+
+            return $this->redirectToRoute('app_login'); // redirection automatique
+
+        }
+
+        if ($form->isSubmitted() && !$form->isValid()) {
+                $this->addFlash(
+                    'danger',
+                    "Les modifications n'ont pas été effectuées."
+                );
         }
 
         return $this->render('register/index.html.twig', [
