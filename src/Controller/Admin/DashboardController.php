@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use App\Entity\User;
 use App\Entity\Category;
+use App\Entity\Product;
 
 
 class DashboardController extends AbstractDashboardController
@@ -51,5 +52,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
         yield MenuItem::linkToCrud('Catégories', 'fas fa-bars', Category::class);
+        yield MenuItem::linkToCrud('Produits', 'fas fa-cubes', Product::class);
     }
 }
