@@ -100,6 +100,19 @@ class Product
         return $this;
     }
 
+    /**
+     * * get price with taxe
+     *
+     *
+     */
+    public function getPriceWt()
+    {
+        $coef = 1 + ($this->tva/100); // pour avoir 1,20 par exemple
+        $result = ($this->price) * $coef;
+        
+        return $result;
+    }
+
     public function getTva(): ?float
     {
         return $this->tva;

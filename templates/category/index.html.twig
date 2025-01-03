@@ -7,11 +7,13 @@
 
     <h1 class="pb-5">{{ category.name }}</h1>
     <p>Cette catégorie contient {{category.products|length}} produit(s).</p>
-    {# {{ dump(category.products) }} #}
+    {{ dump(category.products) }}
     <div class="row">
         {% for product in category.products %}
-        <div class="col-md-3">
-            <li>{{ product.name }}</li>
+        <div class="col-md-3 text-center">
+            <img src="/uploads/{{product.illustration}}" class="img-fluid">
+            <strong>{{ product.name }}</strong>
+            <span class="d-block">{{ product.pricewt }}€</span>
         </div>
         {% endfor %}
 
